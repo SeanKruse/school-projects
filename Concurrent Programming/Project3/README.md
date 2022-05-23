@@ -98,6 +98,7 @@ If you would like to provide your own html file:
 3. You will need to run ~jetty:start after the servlet is built using sbt
 4. Navigate to http://localhost:8080/yourfilename
 5. Enjoy!
+6. 6. Close the jetty runner by entering any input from the keyboard
 
 For more information on HTTP requests and responses see:
 https://javadoc.io/doc/org.scalatra/scalatra-unidoc_2.13/2.8.0/org/scalatra/ScalatraServlet.html
