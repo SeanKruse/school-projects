@@ -22,8 +22,8 @@
 - Dr. Beaty
 
 File Handling snippets:
-https://www.baeldung.com/scala/check-file-path-exists
-https://scalatra.org/guides/2.5/http/actions.html
+- https://www.baeldung.com/scala/check-file-path-exists
+- https://scalatra.org/guides/2.5/http/actions.html
 
 # Dates
 
