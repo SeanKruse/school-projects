@@ -11,6 +11,7 @@ Three projects focused on building up a simple web server utilizing concurrency.
 [Jump to Code](<./Principles of Database Systems>)
 
 ### Operating Systems
+This project focused on process and thread scheduling and dispatch and concurrency to solve a Sudoku Puzzle in C language.
 
 [Jump to Code](<./Operating Systems>)
 
