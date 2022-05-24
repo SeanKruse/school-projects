@@ -34,6 +34,6 @@ The coursework covered include linked-lists, trees, stacks, queues, classes, rec
 [Jump to Code](<./Data Structures and Algorithms>)
 
 ### Computer Science 1
-The emphasis of the coursework is on the techniques and style of Object-Oriented programming in Java.
+The emphasis of the coursework is on the techniques and style of Object-Oriented Programming in Java.
 
 [Jump to Code](<./Computer Science 1>)
