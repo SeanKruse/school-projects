@@ -2,6 +2,8 @@
 A repository to organize and highlight all of my CS projects
 
 ### Concurrent Programming
+Three projects focused on building up a simple web server utilizing concurrency. The final project introduced Scala and utilized a future to serve up an html file to localhost.
+[Jump to Code](<./Concurrent Programming>)
 
 ### Principles of Database Design
 
