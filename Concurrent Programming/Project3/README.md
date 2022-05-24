@@ -27,15 +27,12 @@ File Handling snippets:
 
 # Dates
 
-    4/13/2022 - Got environment set up and running
-    4/15/2022 - Started scala review with Christian Lopez. We wrote methods in a shared review file and started tinkering with different objectives to learn the basics
-    4/18/2022 - Implemented buildfile method using the back to the future slide that Dr. Beaty provided
-                (Sourced from Learning Concurrent Programming in Scala: @author Aleksandar Prokopec)
-    4/22/2022 - Started reading Scalatra in Action: @authors Dave Hrycyszyn, Stefan Olligenger , Ross Baker and implementing file serving methods
-    4/23/2022 - I got the file to be served up by Jetty, found example code that Dr. Beaty provided on Canvas to get the file contents wrapped in a future
-                and got the future to be served up to localhost
-    4/24/2022 - Implemented some case switching to handle the file not found (Christian Lopez implemented a method that we worked on previously and adapted it to work with the code provided by Dr. Beaty)
-                Some finishing touches were added. Handled the 404 better, added a test, updated the readme file, added instructions to Github.
+- 4/13/2022 - Got environment set up and running
+- 4/15/2022 - Started scala review with Christian Lopez. We wrote methods in a shared review file and started tinkering with different objectives to learn the basics
+- 4/18/2022 - Implemented buildfile method using the back to the future slide that Dr. Beaty provided (Sourced from Learning Concurrent Programming in Scala: @author Aleksandar Prokopec)
+- 4/22/2022 - Started reading Scalatra in Action: @authors Dave Hrycyszyn, Stefan Olligenger , Ross Baker and implementing file serving methods
+- 4/23/2022 - I got the file to be served up by Jetty, found example code that Dr. Beaty provided on Canvas to get the file contents wrapped in a future and got the future to be served up to localhost
+- 4/24/2022 - Implemented some case switching to handle the file not found (Christian Lopez implemented a method that we worked on previously and adapted it to work with the code provided by Dr. Beaty). Some finishing touches were added. Handled the 404 better, added a test, updated the readme file, added instructions to Github.
 
 # Project Instructions
 
