@@ -1,7 +1,7 @@
 # Concurrent Programming
 
 ### Project 1
-A simple single-threaded web server.
+A single-threaded web server java.
 
 
 ### Project 2
