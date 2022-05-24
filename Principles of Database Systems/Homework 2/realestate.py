@@ -2,7 +2,7 @@
 CS3810 - Principles of Database Systems - Spring 2022
 Instructor: Thyago Mota
 Description: Homework 08
-Student Name:
+Student Name: Sean Kruse
 """
 
 from sqlalchemy.ext.declarative import declarative_base  

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 plugins {
   id 'java'
   id "com.katalon.gradle-plugin" version "0.0.7"
@@ -17,4 +18,25 @@ dependencies {
   // compile 'io.rest-assured:json-path:3.2.0'
   // JSON Schema Validation
   // compile 'io.rest-assured:json-schema-validator:3.2.0'
+=======
+plugins {
+  id 'java'
+  id "com.katalon.gradle-plugin" version "0.0.7"
+}
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  // sample dependencies
+  // rest-assured
+  // compile 'io.rest-assured:rest-assured:3.2.0'
+  // JsonPath
+  // compile 'io.rest-assured:json-path:3.2.0'
+  // XmlPath
+  // compile 'io.rest-assured:json-path:3.2.0'
+  // JSON Schema Validation
+  // compile 'io.rest-assured:json-schema-validator:3.2.0'
+>>>>>>> 2887b22c357d6bcfa54a1422e88da01327c9ff60
 }

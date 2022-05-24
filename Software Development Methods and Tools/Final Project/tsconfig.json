@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
     "compilerOptions": {
         "allowJs": true,
@@ -19,4 +20,27 @@
         "lib",
         "lib-amd"
     ]
+=======
+{
+    "compilerOptions": {
+        "allowJs": true,
+        "baseUrl": ".",
+        "experimentalDecorators": true,
+        "jsx": "react",
+        "noEmitOnError": true,
+        "outDir": "lib",
+        "sourceMap": true,
+        "target": "es5",
+        "lib": [
+            "es2015",
+            "dom"
+        ]
+    },
+    "exclude": [
+        "node_modules",
+        "dist",
+        "lib",
+        "lib-amd"
+    ]
+>>>>>>> 2887b22c357d6bcfa54a1422e88da01327c9ff60
 }
