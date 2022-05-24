@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: book.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: book.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>
+/** Documented by Sean
+* Represents an account selection function
+* @constructor
+*/
+(function(){
+  'use strict';
+  var config;
+  var signatureList;
+
+  /** Documented by Sean
+  *
+  *@var {signature} signature - The signature from a text file
+  *Code by Philip */
+  Office.onReady($.when(getSignatures("signature")).then(storeSignatures));
+
+
+
+  Office.initialize = function(reason){
+    jQuery(document).ready(function(){
+
+      config = getConfig();
+
+            /** Documented by Sean
+      *
+      * Code by Phillip - Functionality for account selection via dropdown menu within taskpane */
+      if(getIsAccountSelected() == false){
+      console.log("account not selected");
+      buildAccountList('#dropdown-menu', signatureList);
+
+      $('#account-selection').toggle(true);
+      $('#signature-content').toggle(false);
+      }
+      else
+      {
+        console.log("account is selected");
+        buildAccountList('#dropdown-menu', signatureList);
+        updateAccountSelectionStatus();
+      }
+
+
+      /** Code by Philip - Insert Signature button functionality for taskpane */
+      $('#insert-signature').on('click', function(){
+
+        /** Documented by Sean
+        * @var {signature} - signature from text file
+        * @deprecated
+        * Deprecated - var signature = getSelectedSignature(); */
+        var signature = signatureList[getRadioID()];
+        var selectedSignature = "&lt;br> " + signature + " &lt;br>";
+        Office.context.mailbox.item.body.setSelectedDataAsync(selectedSignature, {coercionType: 'html'});
+
+      });
+
+      /** Code by Philip - Log out button for the taskpane */
+      $('#log-out').on('click', function(){
+        logOut();
+      });
+
+      $('#random-signature').on('click', function(){
+        /** Documented by Sean
+        *@var {randomNumber} - random index from the signature list
+        *@borrows {floor) - from random class to change random number into integer for grabbing indices
+        * Code by Sean and Philip */
+            var accountSigs = getAccountIndices(getAccount());
+            console.log(accountSigs);
+            /** Code by Sean - floor method to round to integer for random function to grab index of list or array */
+            var randomNumber = Math.floor(Math.random() * (accountSigs.length));
+            randomNumber = accountSigs[randomNumber];
+            /** Code by Philip to grab the break point tags from HTML formatting */
+            var randomSignature = "&lt;br> " + signatureList[randomNumber] + " &lt;br>";
+            Office.context.mailbox.item.body.setSelectedDataAsync(randomSignature, {coercionType: 'html'});
+      });
+
+      /** Documented by Sean
+      *Code by Philip - Save signature button functionality */
+      $('#save-signature').on('click', function(){
+        /** Documented by Sean
+        *@var {newSig} - variable for new signature */
+        var newSig = $('#new-signature').val();
+
+        $.ajax({
+          url: "https://localhost:3000/set-signature?newSignature=" + getAccount() + "-" + newSig,
+        })
+
+        /** Documented by Sean
+        *Build signature list functionality */
+        buildSignatureList('#signatures-list', signatureList, getAccount());
+
+      })
+
+
+      /** Documented by Phillip
+      *Written by Jose with the help of Weston - Delete signature from list functionality */
+      $('#delete-signature').on('click', function(){
+
+/** Documented by Sean
+*@deprecated
+- Deprecated code -
+        var signID = - 1;
+        var deleteSig;
+        var radioButtons = document.getElementsByName('signature-radio');
+        var i = 0;
+        while (i &lt; radioButtons.length){
+          if(radioButtons[i].checked){
+            signID = i;
+            break;
+          }
+          i++;
+      }
+
+*/
+
+      $.ajax({
+        url: "https://localhost:3000/delete-signature?deleteSignature=" + getRadioID() /*signID*/,
+        type: "GET"
+      });
+
+        /** Documented by Sean
+        *@constructor
+        *@param {signatureList} - created list from #signatures-list
+        *@param {#signatures-list} - pulled from text file
+        *Build signature list functionality */
+        buildSignatureList('#signatures-list', signatureList, getAccount());
+
+      });
+    });
+  };
+
+
+   /**Documented by Phillip
+  *Code by Philip - Functionality to store signature and split by the newline character */
+  function storeSignatures(signatures)
+
+  {
+    signatureList = signatures.split("\n");
+  }
+
+  // Code by Philip with the help of stack overflow from https://stackoverflow.com/questions/14659098/checking-if-a-textbox-is-empty-in-javascript
+  function checkTextField(field) {
+    $('#save-signature').removeAttr('disabled');
+
+  }
+})();
+global.Office = () => ({});
+
+(function(){
+    'use strict';
+
+    /** The Office initialize function must be run each time a new page is loaded. */
+    Office.initialize = function(reason){
+      jQuery(document).ready(function(){
+        if (window.location.search) {
+          /** Check if warning should be displayed. */
+          var warn = getParameterByName('warn');
+          if (warn) {
+            $('.not-configured-warning').show();
+          } else {
+            /** See if the config values were passed. */
+            /** If so, pre-populate the values. */
+            var user = getParameterByName('gitHubUserName');
+            var gistId = getParameterByName('defaultGistId');
+
+            $('#github-user').val(user);
+            loadGists(user, function(success){
+              if (success) {
+                $('.ms-ListItem').removeClass('is-selected');
+                $('input').filter(function() {
+                  return this.value === gistId;
+                }).addClass('is-selected').attr('checked', 'checked');
+                $('#settings-done').removeAttr('disabled');
+              }
+            });
+          }
+        }
+
+        /** When the GitHub username changes, */
+        /** try to load gists. */
+        $('#github-user').on('change', function(){
+          $('#gist-list').empty();
+          var ghUser = $('#github-user').val();
+          if (ghUser.length > 0) {
+            loadGists(ghUser);
+          }
+        });
+
+        /** When the Done button is selected, send the
+            values back to the caller as a serialized
+            object. */
+        $('#settings-done').on('click', function() {
+          var settings = {};
+
+          settings.gitHubUserName = $('#github-user').val();
+
+          var selectedGist = $('.ms-ListItem.is-selected');
+          if (selectedGist) {
+            settings.defaultGistId = selectedGist.val();
+
+            sendMessage(JSON.stringify(settings));
+          }
+        });
+      });
+    };
+
+    /**Load gists for the user using the GitHub API
+       and build the list. */
+    function loadGists(user, callback) {
+      getUserGists(user, function(gists, error){
+        if (error) {
+          $('.gist-list-container').hide();
+          $('#error-text').text(JSON.stringify(error, null, 2));
+          $('.error-display').show();
+          if (callback) callback(false);
+        } else {
+          $('.error-display').hide();
+          buildGistList($('#gist-list'), gists, onGistSelected);
+          $('.gist-list-container').show();
+          if (callback) callback(true);
+        }
+      });
+    }
+
+    function onGistSelected() {
+      $('.ms-ListItem').removeClass('is-selected').removeAttr('checked');
+      $(this).children('.ms-ListItem').addClass('is-selected').attr('checked', 'checked');
+      $('.not-configured-warning').hide();
+      $('#settings-done').removeAttr('disabled');
+    }
+
+    function sendMessage(message) {
+      Office.context.ui.messageParent(message);
+    }
+
+    function getParameterByName(name, url) {
+      if (!url) {
+        url = window.location.href;
+      }
+      name = name.replace(/[\[\]]/g, "\\$&amp;");
+      var regex = new RegExp("[?&amp;]" + name + "(=([^&amp;#]*)|&amp;|#|$)"),
+        results = regex.exec(url);
+      if (!results) return null;
+      if (!results[2]) return '';
+      return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
+  })();
+
+module.exports = {
+    multiplyNumbers : multiplyNumbers
+}
+var isAccountSelected = false;
+var accountSelected = "";
+var signatureList;
+var accountList = [];
+
+$.ajax({
+  url: "https://localhost:3000/accounts",
+  type: "GET",
+  success: function(result){
+    result.forEach(account => {
+      accountList.push(account["username"]);
+      if (account["islogged"] == "1"){
+        isAccountSelected = true;
+        accountSelected = account["username"];
+        console.log(account["username"] + "is logged in");
+      }
+    });
+  }
+});
+
+/** Documented by Sean
+ *@constuctor
+ *@param {string} parent - Parent is a string that correlated to the id tag for the html div that will be populated with the signatures
+ *@param {string} acctList - list of accounts for the account management system
+ *@param {string} signaturesForMe - selected per-account signatures from filtering function
+ *@var AcctList - UI element for account list
+ *@var radioItem - UI element for radio dial
+ *@var desc - UI elements for formatting
+ */
+function buildAccountList(parent, signaturesForMe) {
+    signatureList = signaturesForMe;
+    var acctID = 0
+
+    accountList.forEach(function(acct) {
+      var AcctList = $('&lt;div>').addClass('form-check').appendTo(parent);
+
+      var radioItem = $('&lt;input>').addClass('form-check-input').attr('onclick', "onAccountSelected()")
+        .attr('type', 'radio').attr('name', 'account-item').attr('tabindex', 0).attr('id', acctID.toString()).val(acct).hide().appendTo(AcctList);
+
+      var desc = $('&lt;label/>')
+        .addClass('form-check-label').addClass('dropdown-item')
+        .text(acct)
+        .attr('for', acctID.toString())
+        .attr("onclick", "onAccountSelected()")
+        .attr('name', 'account-labels')
+        .attr('type', 'radio')
+        .val(acctID)
+        .appendTo(AcctList);
+
+      acctID = acctID + 1;}
+    );
+  }
+
+ /** Documented by Sean
+ *@constuctor
+ *@var accountID -
+ *@var dropDownItems - variable for the specefic links in the drop-down menu
+ * Setting up the selection of account function with drop-down implementation */
+function onAccountSelected() {
+  var accountID = -1;
+  var dropDownItems = document.getElementsByName('account-item');
+  var i = 0;
+  while (i &lt; dropDownItems.length) {
+    if(dropDownItems[i].checked)
+    {
+      accountID = i;
+      break;
+    }
+    i++;
+  }
+  if(accountID != -1)
+  {
+    console.log("account being selected is" + accountList[accountID]);
+    accountSelected = accountList[accountID]
+    isAccountSelected = true;
+    updateAccountSelectionStatus();
+    $.ajax({
+      url: "https://localhost:3000/accountSelection?selectedAccount=" + accountSelected,
+    });
+  }
+}
+
+/** Documented by Sean
+ *@constuctor
+ * Updating the selected account for taskpane UI display */
+function updateAccountSelectionStatus()
+{
+  $('#account-selection').toggle(false);
+  $('#signature-content').toggle(true);
+  buildSignatureList('#signatures-list', signatureList, accountSelected);
+}
+
+function getAccountIndices(accountName)
+{
+  var indices = []
+  i = 0;
+
+  signatureList.forEach(function(sig) {
+    console.log(sig.substr(0, accountName.length))
+    if (sig.substr(0, accountName.length) == accountName){
+      indices.push(i);
+    }
+    i++;
+  });
+  return indices;
+}
+
+function getAccount()
+  {
+    return accountSelected;
+  }
+
+function getIsAccountSelected()
+{
+  return isAccountSelected;
+}
+
+function logOut()
+{
+  console.log("logging out " + accountSelected);
+  $.ajax({
+    url: "https://localhost:3000/logout?loggedOut=" + accountSelected
+  });
+  isAccountSelected = false;
+  accountSelected = "";
+  $('#account-selection').toggle(true);
+  $('#signature-content').toggle(false);
+
+}
+/** Documented by Sean
+ *@constuctor
+ */
+function getConfig() {
+    var config = {};
+
+    config.gitHubUserName = Office.context.roamingSettings.get('gitHubUserName');
+    config.defaultGistId = Office.context.roamingSettings.get('defaultGistId');
+
+    return config;
+  }
+
+ /** Documented by Sean
+ *@constuctor
+ *@param {string} config - office configuration paramater
+ *@param {string} callback - callback function as paramater
+ *@callback
+ */
+  function setConfig(config, callback) {
+    Office.context.roamingSettings.set('gitHubUserName', config.gitHubUserName);
+    Office.context.roamingSettings.set('defaultGistId', config.defaultGistId);
+
+    Office.context.roamingSettings.saveAsync(callback);
+  }
+  /** Documented by Sean
+   *@constuctor
+   *@param {string} user - user is a string that is correlated to the id tag for the html div that will be populated with the signatures
+   *@param {String} callback - callback function as param
+   *@callback
+   */
+  function getUserGists(user, callback) {
+      var requestUrl = 'https://api.github.com/users/' + user + '/gists';
+
+      $.ajax({
+        url: requestUrl,
+        dataType: 'json'
+      }).done(function(gists){
+        callback(gists);
+      }).fail(function(error){
+        callback(null, error);
+      });
+    }
+
+    /** Documented by Sean
+   *@constuctor
+   *@param {string} parent - parent is a string that is correlated to the id tag for the html div that will be populated with the signatures
+   *@param {String} gists - pulls gists from gist function
+   *@param {String} clickFunc -
+   *@callback
+   */
+    function buildGistList(parent, gists, clickFunc) {
+      gists.forEach(function(gist) {
+
+        var listItem = $('&lt;div/>')
+          .appendTo(parent);
+
+        var radioItem = $('&lt;input>')
+          .addClass('ms-ListItem')
+          .addClass('is-selectable')
+          .attr('type', 'radio')
+          .attr('name', 'gists')
+          .attr('tabindex', 0)
+          .val(gist.id)
+          .appendTo(listItem);
+
+        var desc = $('&lt;span/>')
+          .addClass('ms-ListItem-primaryText')
+          .text(gist.description)
+          .appendTo(listItem);
+
+        var desc = $('&lt;span/>')
+          .addClass('ms-ListItem-secondaryText')
+          .text(' - ' + buildFileList(gist.files))
+          .appendTo(listItem);
+
+        var updated = new Date(gist.updated_at);
+
+        var desc = $('&lt;span/>')
+          .addClass('ms-ListItem-tertiaryText')
+          .text(' - Last updated ' + updated.toLocaleString())
+          .appendTo(listItem);
+
+        listItem.on('click', clickFunc);
+      });
+    }
+
+    /** Documented by Sean
+   *@constuctor
+   *@param {string} files - files to build a list from text file of signatures
+   */
+    function buildFileList(files) {
+
+      var fileList = '';
+
+      for (var file in files) {
+        if (files.hasOwnProperty(file)) {
+          if (fileList.length > 0) {
+            fileList = fileList + ', ';
+          }
+
+          fileList = fileList + files[file].filename + ' (' + files[file].language + ')';
+        }
+      }
+
+      return fileList;
+    }
+
+    /** Documented by Sean
+    *@constuctor
+    *@param {string} gistId - grabbing specific ID from url GitHub gists
+    *@param {String} callback - callback function as param
+    *@callback
+    */
+    function getGist(gistId, callback) {
+      var requestUrl = 'https://api.github.com/gists/' + gistId;
+
+      $.ajax({
+        url: requestUrl,
+        dataType: 'json'
+      }).done(function(gist){
+        callback(gist);
+      }).fail(function(error){
+        callback(null, error);
+      });
+    }
+
+    /** Documented by Sean &amp; Phillip
+    *@constuctor
+    *@param {string} gist - grabbing file in the gist
+    *@param {String} callback - callback function as param
+    *@callback
+    */
+    function buildBodyContent(gist, callback) {
+      /** Find the first non-truncated file in the gist
+      and use it. */
+      for (var filename in gist.files) {
+        if (gist.files.hasOwnProperty(filename)) {
+          var file = gist.files[filename];
+          if (!file.truncated) {
+            /** We have a winner. */
+            switch (file.language) {
+              case 'HTML':
+                /** Insert as-is. */
+                callback(file.content);
+                break;
+              case 'Markdown':
+                /** Convert Markdown to HTML. */
+                var converter = new showdown.Converter();
+                var html = converter.makeHtml(file.content);
+                callback(html);
+                break;
+              default:
+                /** Insert contents as a &lt;code> block. */
+                var codeBlock = '&lt;pre>&lt;code>';
+                codeBlock = codeBlock + file.content;
+                codeBlock = codeBlock + '&lt;/code>&lt;/pre>';
+                callback(codeBlock);
+            }
+            return;
+          }
+        }
+      }
+      callback(null, 'No suitable file found in the gist');
+    }
+    var signatureList;
+    var signature;
+
+    /** Documented by Phillip
+     * getSignatures will grab the signature text file and return that string back to the caller for storing
+     *  @param {string} endpoint - The endpoint for the url to find the signature file
+     */
+     function getSignatures (endpoint) {
+      var sigList;
+      console.log(endpoint);
+        return $.ajax({
+            url: "https://localhost:3000/" + endpoint,
+            type: "GET",
+            success: function(result){
+              signatureList = result
+            }
+
+          });
+      }
+
+    /** Documented by Phillip
+     *getRadioID will look for the selected radio button on the taskpane and return the signature index in the master signature array for that radio button */
+    function getRadioID(){
+      var sigID = -1;
+      var radioButtons = document.getElementsByName('signature-radio');
+      var radioLabels = document.getElementsByName('signature-labels');
+      var i = 0;
+      while (i &lt; radioButtons.length) {
+        if(radioButtons[i].checked)
+        {
+          sigID = i;
+          signature = radioLabels[i].textContent.toString();
+        }
+        i++;
+      }
+
+      i = 0;
+      console.log(signature);
+      while (i &lt; signatureList.length) {
+        if (signatureList[i] == signature)
+        {
+          console.log(radioLabels[sigID].innerHTML.toString());
+          console.log(signatureList[i]);
+          sigID = i;
+          break;
+        }
+        i++;
+      }
+      return sigID;
+
+    }
+
+
+    /** Documented by Phillip &amp; Sean
+     * Takes in html tag and signature list to populate the task pane with signatures
+     *  @constructor
+     *  @param {string} parent - Parent is a string that correlated to the id tag for the html div that will be populated with the signatures
+     *  @param {String[]} sigList - Signature array containing all the signatures from the text file for population on the taskpane
+     */
+    function buildSignatureList(parent, sigList, account) {
+      console.log(account)
+
+      // Empty out the HTML container in case it has residue html from old login
+      var taskpaneElements = document.querySelectorAll(".signature-html");
+      console.log(taskpaneElements);
+      for(var i = 0; i &lt; taskpaneElements.length; i++)
+      {
+        taskpaneElements[i].remove();
+      }
+
+      var sigID = 0
+      sigList.forEach(function(sig) {
+        var key = account + "-";
+        console.log(key);
+        //console.log(sig.substr(0,key.length - 1));
+
+        /** Documented by Sean
+         * @var {SigList} - signature list UI elements
+         * @var {radioItem} - radio dial buttons for UI to select functions
+         * @var {desc} - labels for UI elements
+         * next line by Weston */
+        if(sig.substr(0,key.length) == key)
+        {
+          var SigList = $('&lt;p/>').addClass('signature-html').appendTo(parent);
+
+          var radioItem = $('&lt;input>').addClass('ms-ListItem').addClass('signature-html').addClass('signature-radio').addClass('is-selectable').val(sigID).attr('onclick', "onSignatureSelected()")
+            .attr('type', 'radio').attr('name', 'signature-radio').attr('tabindex', 0).attr('id', 'radioButton').appendTo(SigList);
+            console.log(radioItem.val());
+
+          var desc = $('&lt;span/>')
+            .addClass('text-dark').addClass('rounded').addClass('signature-html').addClass('signature-label').addClass('signature-padding').addClass('is-selectable').attr('name', 'signature-labels')
+            .text(sig)
+            .appendTo(SigList);
+        }
+        sigID = sigID + 1;}
+      );
+    }
+    /** Documented by Sean
+     *@constuctor
+     *@param {string} parent - Parent is a string that correlated to the id tag for the html div that will be populated with the signatures
+     */
+    function clearSignatureList(parent){
+      $(parent).empty();
+    }
+
+    module.exports = {
+      getSignatures: getSignatures,
+      getSelectedSignature, getSelectedSignature,
+      buildSignatureList: buildSignatureList,
+      clearSignatureList: clearSignatureList
+    }
+    global.Office = () => ({});
+
+    //var fs= require('fs');
+
+    var config;
+    var btnEvent;
+
+    //var output = document.getElementById("output");
+
+    //  var raw Files = FileReader;
+    //}
+
+    /** var LinkedList = newFunction()
+        The initialize function must be run each time a new page is loaded. */
+    Office.initialize = function (reason) {
+    };
+
+    /** Documented by Sean
+    * @deprecated
+    Code by weston
+    prints the list items
+    printList()
+    {
+        var curr = this.head;
+        var str = "";
+        while (curr) {
+            str += curr.element + " ";
+            curr = curr.next;
+        }
+        console.log(str);
+    }
+     random function for LinkedList implementation
+    function random(result) {
+      var LinkedList = require('linked-list')
+
+      var Signature1 = newLinkedList.item('Weston J. Lake')
+      var Signature2 = newLinkedList.item('Weston Lake')
+      var Signature3 = newLinkedList.item('weston j. lake')
+      var Signature4 = newLinkedList.item('WJL')
+      var Signature5 = newLinkedList.item('WL')
+      var list = newLinkedList(Signature1, Signature2, Signature3, Signature4, Signature5)
+      var randomNum = math.random(list.size)
+      if (randomNum != 0) {
+        while (randomNum >= 0) {
+          list.head.next
+          randomNum--
+          console.log(list.Signature1);
+          list.printList();
+        }
+        return list.head;
+      }
+      else {
+        console.log(Signature1);
+        list.printList();
+        return list.head;
+      }
+    }
+
+     addEventHandler method
+    object.addEventHandler("click", random()); */
+
+    /** Documented by Phillip &amp; Sean
+     *  @constructor
+     *  @param {String} error - error message
+     * Add any UI-less function here. */
+    function showError(error) {
+      Office.context.mailbox.item.notificationMessages.replaceAsync('github-error', {
+        type: 'errorMessage',
+        message: error
+      }, function(result){
+      });
+    }
+
+    var settingsDialog;
+
+    function insertDefaultGist(event) {
+
+      config = getConfig();
+
+      /** Check if the add-in has been configured. */
+      if (config &amp;&amp; config.defaultGistId) {
+        /** Get the default gist content and insert. */
+        try {
+          getGist(config.defaultGistId, function(gist, error) {
+            if (gist) {
+              buildBodyContent(gist, function (content, error) {
+                if (content) {
+                  Office.context.mailbox.item.body.setSelectedDataAsync(content,
+                    {coercionType: Office.CoercionType.Html}, function(result) {
+                      event.completed();
+                    });
+
+                } else {
+                  showError(error);
+                  event.completed();
+                }
+              });
+            } else {
+              showError(error);
+              event.completed();
+            }
+          });
+        } catch (err) {
+          showError(err);
+          event.completed();
+        }
+
+      } else {
+        /** Save the event object so we can finish up later. */
+        btnEvent = event;
+        /** Not configured yet, display settings dialog with
+            warn=1 to display warning. */
+        var url = new URI('../src/settings/dialog.html?warn=1').absoluteTo(window.location).toString();
+        var dialogOptions = { width: 20, height: 40, displayInIframe: true };
+
+        Office.context.ui.displayDialogAsync(url, dialogOptions, function(result) {
+          settingsDialog = result.value;
+          settingsDialog.addEventHandler(Office.EventType.DialogMessageReceived, receiveMessage);
+          settingsDialog.addEventHandler(Office.EventType.DialogEventReceived, dialogClosed);
+        });
+      }
+    }
+
+    function receiveMessage(message) {
+      config = JSON.parse(message.message);
+      setConfig(config, function(result) {
+        settingsDialog.close();
+        settingsDialog = null;
+        btnEvent.completed();
+        btnEvent = null;
+      });
+    }
+
+    function dialogClosed(message) {
+      settingsDialog = null;
+      btnEvent.completed();
+      btnEvent = null;
+    }
+
+    function getGlobal() {
+      return (typeof self !== "undefined") ? self :
+        (typeof window !== "undefined") ? window :
+        (typeof global !== "undefined") ? global :
+        undefined;
+    }
+
+    var g = getGlobal();
+
+    /** The add-in command functions need to be available in global scope. */
+    g.insertDefaultGist = insertDefaultGist;
+
+
+
+    function multiplyNumbers(x, y) {
+      return x * y;
+    }
+
+    /**
+    *@deprecated
+    Deprecated - Code by Sean &amp; Weston
+    var sig = fs.readFileSync("assets/signatures.txt").toString().split("\n");
+    for (i in sig) {
+      console.log(sig[i])
+    }
+    *@deprecated
+    Deprecated - Code by Sean &amp; Weston
+    function randomSignature() {
+      var sig = fs.readFileSync('assets/signatures.txt').toString().split("\n");
+      var randomNumber = Math.floor(Math.random() * (sig.length));
+      return sig[randomNumber];
+    }
+    */
+
+    module.exports = {
+      multiplyNumbers : multiplyNumbers
+      //randomSignature: randomSignature
+    }
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="buildSignatureList.html">buildSignatureList</a></li><li><a href="showError.html">showError</a></li></ul><h3>Global</h3><ul><li><a href="global.html#buildFileList">buildFileList</a></li><li><a href="global.html#clearSignatureList">clearSignatureList</a></li><li><a href="global.html#desc">desc</a></li><li><a href="global.html#dropDownItems">dropDownItems</a></li><li><a href="global.html#getConfig">getConfig</a></li><li><a href="global.html#getRadioID">getRadioID</a></li><li><a href="global.html#getSignatures">getSignatures</a></li><li><a href="global.html#signature">signature</a></li><li><a href="global.html#updateAccountSelectionStatus">updateAccountSelectionStatus</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Wed May 12 2021 03:53:04 GMT-0600 (Mountain Daylight Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
