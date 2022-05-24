@@ -2,7 +2,8 @@
 A repository to organize and highlight all of my CS projects. 
 
 ## Index
-The index is organized by most recent classes taken and projects completed.
+The courses are listed in chronological order, with newer projects closer to the top.
+You can find more information on each project's individual README.
 
 ### Concurrent Programming
 Three projects focused on building up a simple web server utilizing concurrency. The final project introduced Scala and utilized a future to serve up an html file to localhost.
