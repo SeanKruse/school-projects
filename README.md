@@ -14,6 +14,7 @@ Three projects focused on building up a simple web server utilizing concurrency.
 
 ### Software Development Methods and Tools
 This is a group project developed in an agile enviroment. The project evolved based on the customer's desire for an Outlook signature add-in.
+
 [Jump to Repo](https://github.com/CS-3250-Team-3-Stooges/OutlookSignatureAddin.git)
 
 ### Computer Organization 2
