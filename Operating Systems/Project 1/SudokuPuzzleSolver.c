@@ -1,4 +1,4 @@
-// Team Project Alex Sanford & Sean Kruse
+// Team Project Alexander Sanford & Sean Kruse
 #include <stdio.h>
 #include <stdlib.h>
 #include <pthread.h>
@@ -90,7 +90,7 @@ int main() {
     subgridObjects[2].leftColumn = subgridObjects[5].leftColumn = subgridObjects[8].leftColumn = 6;
     subgridObjects[2].rightColumn = subgridObjects[5].rightColumn = subgridObjects[8].rightColumn = 8;
 
-    // create and wait for column workers
+    // create and wait for column workers to finish running
     for (i = 0; i < 9; i++) {
       pthread_create(&tid_column[i], NULL, columnCheck, &columnObjects[i]);
     }
@@ -98,7 +98,7 @@ int main() {
       pthread_join(tid_column[i], NULL);  
     }
 
-    // create and wait for row workers
+    // create and wait for row workers to finish running
     for (i = 0; i < 9; i++) {
       pthread_create(&tid_row[i], NULL, rowCheck, &rowObjects[i]);
     }
@@ -106,7 +106,7 @@ int main() {
       pthread_join(tid_row[i], NULL);  
     }
 
-    // create and wait for subgrid workers
+    // create and wait for subgrid workers to finish running
     for (i = 0; i < 9; i++) {
       pthread_create(&tid_subgrid[i], NULL, subgridCheck, &subgridObjects[i]);
     }
@@ -160,7 +160,7 @@ int main() {
     return EXIT_SUCCESS;
 } //end main
 
-// function that determines if a row is valid by only containing numbers 1-9 once
+// function that determines if a column is valid by only containing numbers 1-9 once
 void *columnCheck(void* param) {
     // Confirm that parameters indicate a valid col subsection
     parameters *params = (parameters*) param;
@@ -277,7 +277,7 @@ void *subgridCheck(void* param) {
             }
         }
     }
-    // SubGrid is valid.
+    // if SubGrid is valid.
     if (invalid == 0) { 
       subArray[row + col/3] = 1;
     } 
