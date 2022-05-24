@@ -13,3 +13,7 @@
 - Create queries to fulfill the project's objectives.
 
 ### Project 3 (SQL Project utilizing Python)
+
+- Normalize Entity-Relationship Model to SQL tables.
+- Create appropriate column-mapping in the Python program.
+- Finish each Python Class to display the correct queries.
