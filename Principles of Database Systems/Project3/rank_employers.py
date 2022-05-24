@@ -1,7 +1,7 @@
 '''
 CS3810 - Principles of Database Systems - Spring 2022
 Instructor: Thyago Mota
-Student Names:
+Student Names: Sean Kruse
 Description: show recommendation scores for student-employer matching based on common interests
 '''
 
