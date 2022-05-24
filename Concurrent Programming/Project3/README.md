@@ -8,7 +8,7 @@
 
 # Author
 
- - Sean Kruse
+ - [Sean Kruse](https://github.com/SeanKruse)
 
 # Colloborators
 
