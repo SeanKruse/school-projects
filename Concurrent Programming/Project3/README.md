@@ -12,8 +12,8 @@
 
 # Colloborators
 
-[Christian Lopez](https://github.com/alexandersanford)
-[Alexander Sanford](https://github.com/alexandersanford)
+- [Christian Lopez](https://github.com/chrisreylo73)
+- [Alexander Sanford](https://github.com/alexandersanford)
 
 # Sources
 
