@@ -28,6 +28,7 @@ This is a group project developed in an agile enviroment. The project evolved ba
 [Jump to Code](<./Computer Organization 2>)
 
 ### Data Structures and Algorithms
+The coursework covered include linked-lists, trees, stacks, queues, classes, recursion, and a variety of data representation methods.
 
 [Jump to Code](<./Data Structures and Algorithms>)
 
