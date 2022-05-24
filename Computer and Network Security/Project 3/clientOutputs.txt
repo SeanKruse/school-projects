@@ -1,0 +1,21 @@
+Enter ip/dns address: 
+Enter port number: 
+Peer host is cs3750a.msudenver.edu
+Cipher suite is TLS_AES_128_GCM_SHA256
+Protocol is TLSv1.3
+Session ID is [70, 4, -92, 39, -57, -105, -73, -33, -67, 91, 69, 50, -38, -56, -23, 7, 31, -80, -64, -61, 106, 33, -15, -64, 80, 10, -36, -89, 37, -104, 127, 10]
+The creation time of this session is 1639167385065
+The last accessed time of this session is 1639167385065
+User Name:
+Full Name:
+Address:
+Phone number:
+Email address:
+Add more users? (yes or any for no)
+User Name:
+Full Name:
+Address:
+Phone number:
+Email address:
+Add more users? (yes or any for no)
+Cya!

@@ -1,0 +1,4 @@
+Keystore password: password
+Truststore password: password
+PrivateKeyEntry alias: xyz
+TrustedCertEntry password: password
