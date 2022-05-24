@@ -7,6 +7,7 @@ Three projects focused on building up a simple web server utilizing concurrency.
 [Jump to Code](<./Concurrent Programming>)
 
 ### Principles of Database Systems
+Three Projects focusing on SQL utilizing Java and Python programs for processing. Normalization and Entity-Relationship models were utilized for the last two projects.
 
 [Jump to Code](<./Principles of Database Systems>)
 
