@@ -1,5 +1,5 @@
 # school-projects
-A repository to organize and highlight all of my CS projects
+A repository to organize and highlight all of my CS projects. The index is organized by msot recent classes taken and projects completed.
 
 ### Concurrent Programming
 Three projects focused on building up a simple web server utilizing concurrency. The final project introduced Scala and utilized a future to serve up an html file to localhost.
