@@ -17,13 +17,13 @@
 
 # Sources
 
-    Learning Concurrent Programming in Scala: @author Aleksandar Prokopec.
-    Scalatra in Action: @authors Dave Hrycyszyn, Stefan Olligenger, Ross Baker.
-    Dr. Beaty
+- Learning Concurrent Programming in Scala: @author Aleksandar Prokopec.
+- Scalatra in Action: @authors Dave Hrycyszyn, Stefan Olligenger, Ross Baker.
+- Dr. Beaty
 
-    File Handling snippets:
-    https://www.baeldung.com/scala/check-file-path-exists
-    https://scalatra.org/guides/2.5/http/actions.html
+File Handling snippets:
+https://www.baeldung.com/scala/check-file-path-exists
+https://scalatra.org/guides/2.5/http/actions.html
 
 # Dates
 
