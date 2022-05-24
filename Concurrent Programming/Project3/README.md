@@ -8,8 +8,12 @@
 
 # Author
 
-    Sean Kruse
-    Colloborated with Christian Lopez, Christian Mudd, And Alexander Sanford
+ - Sean Kruse
+
+# Colloborators
+
+[Christian Lopez](https://github.com/alexandersanford)
+[Alexander Sanford](https://github.com/alexandersanford)
 
 # Sources
 
