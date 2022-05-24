@@ -16,7 +16,7 @@ Three projects focused on building up a simple web server utilizing concurrency.
 
 ### Network & Internet Security
 
-[Jump to Code](<./Network annd Internet Security)
+[Jump to Code](<./Network annd Internet Security>)
 
 ### Software Development Methods and Tools
 This is a group project developed in an agile enviroment. The project evolved based on the customer's desire for an Outlook signature add-in.
