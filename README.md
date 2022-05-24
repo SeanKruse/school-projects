@@ -14,7 +14,7 @@ Three projects focused on building up a simple web server utilizing concurrency.
 
 [Jump to Code](<./Operating Systems>)
 
-### Computer & Network Security
+### Computer and Network Security
 
 [Jump to Code](<./Computer annd Network Security>)
 
