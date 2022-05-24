@@ -16,6 +16,7 @@ This project focused on process and thread scheduling and dispatch and concurren
 [Jump to Code](<./Operating Systems>)
 
 ### Computer and Network Security
+Three projects focusing on cryptography
 
 [Jump to Code](<./Computer and Network Security>)
 
