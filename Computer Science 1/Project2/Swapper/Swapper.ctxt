@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=Swapper
+comment0.text=\r\n\ Implement\ the\ method\ in\ this\ class\ according\ to\ the\ specifications\r\n\ provided\ in\ each\ of\ the\ methods'\ header\ comments.\r\n\ \r\n\ @author\ Sean\ Kruse\r\n\ @version\ CS1050\ \r\n
+comment1.params=array\ index1\ index2
+comment1.target=void\ swap(int[],\ int,\ int)
+comment1.text=\r\n\ Swaps\ the\ values\ stored\ at\ two\ locations\ in\ an\ array.\r\n\ \r\n\ For\ example,\r\n\ \ \ if\ array\ foo[]\ initially\ contained\ [0,\ 10,\ 22,\ 30,\ 44],\r\n\ \ \ after\ the\ method\ invocation\ swap(foo,\ 1,\ 3)\r\n\ \ \ foo\ would\ contain\ [0,\ 30,\ 22,\ 10,\ 44].\r\n\ \r\n\ @param\ \ array\ \ \ the\ array\ whose\ values\ are\ to\ be\ swapped\r\n\ @param\ \ index1\ \ the\ index\ of\ the\ first\ value\ to\ be\ swapped\r\n\ @param\ \ index2\ \ the\ index\ of\ the\ second\ value\ to\ be\ swapped\r\n\ \ \ \ \ if\ the\ parameter\ is\ positive;\ 0\ otherwise\r\n
+numComments=2

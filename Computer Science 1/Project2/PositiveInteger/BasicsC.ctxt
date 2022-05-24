@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=BasicsC
+comment0.text=\r\n\ Complete\ the\ source\ code\ for\ this\ class\ according\ to\ the\ following\r\n\ \ \ \ \ specifications.\r\n\ \r\n\ 1.\ The\ @author\ tag\ below\ must\ have\ its\ value\ replaced\ with\ your\ name.\r\n\ \r\n\ 2.\ Implement\ the\ methods\ in\ this\ class\ according\ to\ the\ specifications\r\n\ \ \ \ provided\ in\ the\ header\ comments\ for\ each\ method.\r\n\ \r\n\ @author\ Sean\ Kruse\r\n\ @version\ CS1050\ Fall\ 2018\r\n
+comment1.params=limit
+comment1.target=int\ sumOfPositiveIntegerSequence(int)
+comment1.text=\r\n\ Returns\ the\ sum\ of\ all\ integers\ from\ 1\ to\ the\ specified\ parameter,\r\n\ \ \ including\ the\ parameter\ in\ the\ sum.\r\n\ \ \ If\ the\ parameter\ value\ is\ negative,\ returns\ zero.\r\n\ For\ example,\r\n\ \ \ sumOfPositiveIntegerSequence(3)\ should\ return\ 6;\r\n\ \ \ sumOfPositiveIntegerSequence(-5)\ should\ return\ 0.\r\n\ \r\n\ @param\ \ limit\ \ \ the\ largest\ value\ included\ in\ the\ sum\ (if\ positive)\r\n\ @return\ the\ sum\ of\ integers\ in\ the\ range\ 1...limit\ inclusive\r\n\ \ \ \ \ \ \ \ \ if\ the\ parameter\ is\ positive;\ 0\ otherwise\r\n
+comment2.params=original
+comment2.target=java.util.ArrayList\ everyOtherItem(java.util.ArrayList)
+comment2.text=\r\n\ Returns\ a\ list\ consisting\ of\ the\ initial\ item\ in\ the\ parameter\r\n\ followed\ by\ every\ other\ item\ in\ the\ parameter.\r\n\ For\ example,\ if\ the\ original\ list\ was\ ["my",\ "dog",\ "has",\ "fleas",\ "\!"]\r\n\ then\ the\ list\ returned\ would\ be\ ["my",\ "has",\ "\!"].\r\n\ \r\n\ @param\ \ original\ \ \ the\ list\ from\ which\ the\ returned\ list\ is\ constructed\r\n\ @return\ a\ list\ containing\ every\ other\ element\ of\ the\ original\ list\r\n
+numComments=3

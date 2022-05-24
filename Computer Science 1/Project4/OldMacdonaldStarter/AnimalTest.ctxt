@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=AnimalTest
+comment0.text=\r\n\ The\ test\ class\ AnimalTest.\r\n\r\n\ @author\ \ Jody\ Paul\r\n\ @version\ 20180920.1.1\r\n
+comment1.params=
+comment1.target=void\ attributesTest()
+comment1.text=Test\ the\ constructor\ and\ accessors\ for\ name\ and\ sound.
+numComments=2
