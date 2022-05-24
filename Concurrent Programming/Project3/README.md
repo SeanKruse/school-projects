@@ -2,9 +2,9 @@
 
 # Project Description
 
-    A simble web-server using scalatra that takes a file and returns it as a future.
-    If you navigate to the incorrect URL, the program provides a 404 Error.
-    The project currently contains a simple html file named hello.html that will be returned, but there are instructions for handling any html file that the user would like to provide.
+- A simble web-server using scalatra that takes a file and returns it as a future.
+- If you navigate to the incorrect URL, the program provides a 404 Error.
+- The project currently contains a simple html file named hello.html that will be returned, but there are instructions for handling any html file that the user would like to provide.
 
 # Author
 
