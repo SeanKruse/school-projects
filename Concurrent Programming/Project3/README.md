@@ -1,35 +1,45 @@
 # CS39ACSpring2022Assignment03
+
 # Project Description
+
     A simble web-server using scalatra that takes a file and returns it as a future.
     If you navigate to the incorrect URL, the program provides a 404 Error.
     The project currently contains a simple html file named hello.html that will be returned, but there are instructions for handling any html file that the user would like to provide.
-# Author 
-    Sean Kruse 
+
+# Author
+
+    Sean Kruse
     Colloborated with Christian Lopez, Christian Mudd, And Alexander Sanford
+
 # Sources
-    Learning Concurrent Programming in Scala: @author Aleksandar Prokopec. 
+
+    Learning Concurrent Programming in Scala: @author Aleksandar Prokopec.
     Scalatra in Action: @authors Dave Hrycyszyn, Stefan Olligenger, Ross Baker.
     Dr. Beaty
-    
+
     File Handling snippets:
     https://www.baeldung.com/scala/check-file-path-exists
     https://scalatra.org/guides/2.5/http/actions.html
-# Dates        
+
+# Dates
+
     4/13/2022 - Got environment set up and running
     4/15/2022 - Started scala review with Christian Lopez. We wrote methods in a shared review file and started tinkering with different objectives to learn the basics
-    4/18/2022 - Implemented buildfile method using the back to the future slide that Dr. Beaty provided 
+    4/18/2022 - Implemented buildfile method using the back to the future slide that Dr. Beaty provided
                 (Sourced from Learning Concurrent Programming in Scala: @author Aleksandar Prokopec)
     4/22/2022 - Started reading Scalatra in Action: @authors Dave Hrycyszyn, Stefan Olligenger , Ross Baker and implementing file serving methods
-    4/23/2022 - I got the file to be served up by Jetty, found example code that Dr. Beaty provided on Canvas to get the file contents wrapped in a future 
+    4/23/2022 - I got the file to be served up by Jetty, found example code that Dr. Beaty provided on Canvas to get the file contents wrapped in a future
                 and got the future to be served up to localhost
     4/24/2022 - Implemented some case switching to handle the file not found (Christian Lopez implemented a method that we worked on previously and adapted it to work with the code provided by Dr. Beaty)
-                Some finishing touches were added. Handled the 404 better, added a test, updated the readme file, added instructions to Github. 
+                Some finishing touches were added. Handled the 404 better, added a test, updated the readme file, added instructions to Github.
 
 # Project Instructions
+
 You'll need to install SBT on your machine. Here are some instructions.
-* https://www.scala-sbt.org/1.x/docs/Installing-sbt-on-Windows.html
-* https://www.scala-sbt.org/1.x/docs/Installing-sbt-on-Mac.html
-* https://www.scala-sbt.org/1.x/docs/Installing-sbt-on-Linux.html
+
+- https://www.scala-sbt.org/1.x/docs/Installing-sbt-on-Windows.html
+- https://www.scala-sbt.org/1.x/docs/Installing-sbt-on-Mac.html
+- https://www.scala-sbt.org/1.x/docs/Installing-sbt-on-Linux.html
 
 This project was built with Scalatra (https://scalatra.org/) Here is how
 this specific repo was built.
@@ -51,7 +61,7 @@ this specific repo was built.
     xsbt_web_plugin_version [4.2.1]:
     jetty_version [9.4.35.v20201120]:
 
-You'll need to set your JAVA\_HOME environment variable to refer to a Java
+You'll need to set your JAVA_HOME environment variable to refer to a Java
 1.8 install. You'll be able to start a web servlet via sbt:
 
     MS200667 CS39ACSpring2022Assignment03  sbt
@@ -92,13 +102,14 @@ You should now be able to browse to http://localhost:8080/hello.html and see:
     I'm being pushed out to the localhost...
     I'm so tiny...
 
-If you would like to provide your own html file: 
-1. The file needs to be in the src folder of the project 
+If you would like to provide your own html file:
+
+1. The file needs to be in the src folder of the project
 2. You need to run sbt from the terminal
 3. You will need to run ~jetty:start after the servlet is built using sbt
 4. Navigate to http://localhost:8080/yourfilename
 5. Enjoy!
-6. 6. Close the jetty runner by entering any input from the keyboard
+6. Close the jetty runner by entering any input from the keyboard
 
 For more information on HTTP requests and responses see:
 https://javadoc.io/doc/org.scalatra/scalatra-unidoc_2.13/2.8.0/org/scalatra/ScalatraServlet.html

@@ -1,0 +1,8 @@
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(ettr, Some(1110b795-2aea-4a18-b094-8685d406b022), Some(CommandSource(console0)))[0m
+[0m[[0m[31merror[0m] [0m[0mNot a valid command: ettr (similar: set, exit, settings)[0m
+[0m[[0m[31merror[0m] [0m[0mNot a valid project ID: ettr[0m
+[0m[[0m[31merror[0m] [0m[0mExpected ':'[0m
+[0m[[0m[31merror[0m] [0m[0mNot a valid key: ettr (similar: test, testFilter, state)[0m
+[0m[[0m[31merror[0m] [0m[0mettr[0m
+[0m[[0m[31merror[0m] [0m[0m    ^[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(shell, None, None)[0m

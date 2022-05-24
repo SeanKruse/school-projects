@@ -1,0 +1,14 @@
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(jetty:start, Some(3cf1acb1-8657-4ae1-a337-aafc3bccf611), Some(CommandSource(console0)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mEvaluating tasks: Jetty / start[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: Signal, check cycles: false, forcegc: true[0m
+[0m[[0m[0minfo[0m] [0m[0mcompiling 1 Scala source to C:\Users\seank\Desktop\MSU\Spring 2022\Concurrent Programming\cs39acspring2020assignment03-xDazed\target\scala-2.13\classes ...[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\seank\Desktop\MSU\Spring 2022\Concurrent Programming\cs39acspring2020assignment03-xDazed\src\main\scala\edu\msudenver\cs\cs39ac\MyScalatraServlet.scala:83:17: expected start of definition[0m
+[0m[[0m[31merror[0m] [0m[0m                public void run() {[0m
+[0m[[0m[31merror[0m] [0m[0m                ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\seank\Desktop\MSU\Spring 2022\Concurrent Programming\cs39acspring2020assignment03-xDazed\src\main\scala\edu\msudenver\cs\cs39ac\MyScalatraServlet.scala:92:1: Missing closing brace `}` assumed here[0m
+[0m[[0m[31merror[0m] [0m[0m}[0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m
+[0m[[0m[31merror[0m] [0m[0m(Compile / [31mcompileIncremental[0m) Compilation failed[0m
+[0m[[0m[31merror[0m] [0m[0mTotal time: 8 s, completed Apr 27, 2022, 2:15:15 PM[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(shell, None, None)[0m

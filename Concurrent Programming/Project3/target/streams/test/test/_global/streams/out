@@ -1,0 +1,14 @@
+[0m[[0m[0mdebug[0m] [0m[0mRunning TaskDef(edu.msudenver.cs.cs39ac.MyScalatraServletTests, org.scalatest.tools.Framework$$anon$1@9cf994c, false, [SuiteSelector])[0m
+[0m[[0m[0minfo[0m] [0m[0m[32mMyScalatraServletTests:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- GET / on MyScalatraServlet should return status 200[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[32m- GET /hello on MyScalatraServlet should return status 404[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m- GET goodbye//hello on MyScalatraServlet should return status 500 *** FAILED ***[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  404 did not equal 500 (MyScalatraServletTests.scala:23)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mRun completed in 1 second, 232 milliseconds.[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mTotal number of tests run: 3[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mSuites: completed 1, aborted 0[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[36mTests: succeeded 2, failed 1, canceled 0, ignored 0, pending 0[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m*** 1 TEST FAILED ***[0m[0m
+[0m[[0m[31merror[0m] [0m[0mFailed tests:[0m
+[0m[[0m[31merror[0m] [0m[0m	edu.msudenver.cs.cs39ac.MyScalatraServletTests[0m
+[0m[[0m[31merror[0m] [0m[0m(Test / [31mtest[0m) sbt.TestsFailedException: Tests unsuccessful[0m

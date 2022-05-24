@@ -1,0 +1,31 @@
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(~jetty:start, Some(9286e24f-b0d3-401e-946a-25f8f50ded6b), Some(CommandSource(console0)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: Signal, check cycles: false, forcegc: true[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(__runWatch console0, None, Some(CommandSource(console0)))[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(sbtStashOnFailure, None, Some(CommandSource(console0)))[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(__preWatch console0, None, Some(CommandSource(console0)))[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(jetty:start, None, Some(CommandSource(console0)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mEvaluating tasks: Jetty / start[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: Signal, check cycles: false, forcegc: true[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcNotify: JsonRpcNotificationMessage(2.0, build/taskStart, {"taskId":{"id":"1","parents":[]},"eventTime":1650909149284,"message":"Compiling hello","dataKind":"compile-task","data":{"target":{"uri":"file:/C:/Users/seank/Desktop/MSU/Spring%202022/Concurrent%20Programming/cs39acspring2020assignment03-xDazed/#hello/Compile"}}})[0m
+[0m[[0m[0minfo[0m] [0m[0mcompiling 4 Scala sources to C:\Users\seank\Desktop\MSU\Spring 2022\Concurrent Programming\cs39acspring2020assignment03-xDazed\target\scala-2.13\classes ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcNotify: JsonRpcNotificationMessage(2.0, build/logMessage, {"type":3,"message":"compiling 4 Scala sources to C:\\Users\\seank\\Desktop\\MSU\\Spring 2022\\Concurrent Programming\\cs39acspring2020assignment03-xDazed\\target\\scala-2.13\\classes ..."})[0m
+[0m[[0m[33mwarn[0m] [0m[0m1 deprecation (since 2.13.0)[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcNotify: JsonRpcNotificationMessage(2.0, build/logMessage, {"type":2,"message":"1 deprecation (since 2.13.0)"})[0m
+[0m[[0m[33mwarn[0m] [0m[0m1 deprecation (since 2.13.3)[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcNotify: JsonRpcNotificationMessage(2.0, build/logMessage, {"type":2,"message":"1 deprecation (since 2.13.3)"})[0m
+[0m[[0m[33mwarn[0m] [0m[0m2 deprecations in total; re-run with -deprecation for details[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcNotify: JsonRpcNotificationMessage(2.0, build/logMessage, {"type":2,"message":"2 deprecations in total; re-run with -deprecation for details"})[0m
+[0m[[0m[33mwarn[0m] [0m[0mthree warnings found[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcNotify: JsonRpcNotificationMessage(2.0, build/logMessage, {"type":2,"message":"three warnings found"})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcNotify: JsonRpcNotificationMessage(2.0, build/publishDiagnostics, {"textDocument":{"uri":"file:///C:/Users/seank/Desktop/MSU/Spring%202022/Concurrent%20Programming/cs39acspring2020assignment03-xDazed/src/main/scala/ScalatraBootstrap.scala"},"buildTarget":{"uri":"file:/C:/Users/seank/Desktop/MSU/Spring%202022/Concurrent%20Programming/cs39acspring2020assignment03-xDazed/#hello/Compile"},"diagnostics":[],"reset":true})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcNotify: JsonRpcNotificationMessage(2.0, build/publishDiagnostics, {"textDocument":{"uri":"file:///C:/Users/seank/Desktop/MSU/Spring%202022/Concurrent%20Programming/cs39acspring2020assignment03-xDazed/target/scala-2.13/twirl/main/views/html/hello.template.scala"},"buildTarget":{"uri":"file:/C:/Users/seank/Desktop/MSU/Spring%202022/Concurrent%20Programming/cs39acspring2020assignment03-xDazed/#hello/Compile"},"diagnostics":[],"reset":true})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcNotify: JsonRpcNotificationMessage(2.0, build/publishDiagnostics, {"textDocument":{"uri":"file:///C:/Users/seank/Desktop/MSU/Spring%202022/Concurrent%20Programming/cs39acspring2020assignment03-xDazed/target/scala-2.13/twirl/main/layouts/html/default.template.scala"},"buildTarget":{"uri":"file:/C:/Users/seank/Desktop/MSU/Spring%202022/Concurrent%20Programming/cs39acspring2020assignment03-xDazed/#hello/Compile"},"diagnostics":[],"reset":true})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcNotify: JsonRpcNotificationMessage(2.0, build/publishDiagnostics, {"textDocument":{"uri":"file:///C:/Users/seank/Desktop/MSU/Spring%202022/Concurrent%20Programming/cs39acspring2020assignment03-xDazed/src/main/scala/edu/msudenver/cs/cs39ac/MyScalatraServlet.scala"},"buildTarget":{"uri":"file:/C:/Users/seank/Desktop/MSU/Spring%202022/Concurrent%20Programming/cs39acspring2020assignment03-xDazed/#hello/Compile"},"diagnostics":[],"reset":true})[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcNotify: JsonRpcNotificationMessage(2.0, build/taskFinish, {"taskId":{"id":"1","parents":[]},"eventTime":1650909167038,"message":"Compiled hello","status":1,"dataKind":"compile-report","data":{"target":{"uri":"file:/C:/Users/seank/Desktop/MSU/Spring%202022/Concurrent%20Programming/cs39acspring2020assignment03-xDazed/#hello/Compile"},"errors":0,"warnings":0,"time":17754}})[0m
+[0m[[0m[0minfo[0m] [0m[0mstarting server ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mjsonRpcNotify: JsonRpcNotificationMessage(2.0, build/logMessage, {"type":3,"message":"starting server ..."})[0m
+[0m[[0m[32msuccess[0m] [0m[0mTotal time: 21 s, completed Apr 25, 2022, 11:52:47 AM[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(resumeFromFailure, None, Some(CommandSource(console0)))[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(sbtPopOnFailure, None, Some(CommandSource(console0)))[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(__postWatch console0, None, Some(CommandSource(console0)))[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(__waitWatch console0, None, Some(CommandSource(console0)))[0m
