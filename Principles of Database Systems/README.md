@@ -9,7 +9,7 @@
 
 - Normalize CSV file to the third normal form.
 - Write Java program to read in very large CSV file.
-- Create Database with normalized tables 
+- Create Database with normalized tables. 
 - Create queries to fulfill the project's objectives.
 
 ### Project 3
