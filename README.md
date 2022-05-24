@@ -6,9 +6,9 @@ Three projects focused on building up a simple web server utilizing concurrency.
 
 [Jump to Code](<./Concurrent Programming>)
 
-### Principles of Database Design
+### Principles of Database Systems
 
-[Jump to Code](<./Principles of Database Design>)
+[Jump to Code](<./Principles of Database Systems>)
 
 ### Operating Systems
 
