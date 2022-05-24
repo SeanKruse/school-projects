@@ -26,6 +26,7 @@ This is a group project developed in an agile enviroment. The project evolved ba
 [Jump to Repo](https://github.com/CS-3250-Team-3-Stooges/OutlookSignatureAddin.git)
 
 ### Computer Organization 2
+Five projects to utilize assembly language to show security risks and performance of registers.
 
 [Jump to Code](<./Computer Organization 2>)
 
