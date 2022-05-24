@@ -34,4 +34,5 @@ The coursework covered include linked-lists, trees, stacks, queues, classes, rec
 
 ### Computer Science 1
 The emphasis of the coursework is on the techniques and style of Object-Oriented programming in Java.
+
 [Jump to Code](<./Computer Science 1>)
