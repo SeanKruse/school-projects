@@ -1,7 +1,7 @@
 '''
 CS3810 - Principles of Database Systems - Spring 2022
 Instructor: Thyago Mota
-Student Names:
+Student Names: Sean Kruse
 Description: creates Interest entity and allows listing of all interests
 '''
 
