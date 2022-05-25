@@ -1,9 +1,9 @@
 
 /**
- * Write a description of class BeerBottle here.
+ * A very simple string logic program
  *
  * @author Sean Kruse
- * @version 1.0 (Testing forsmall errors)
+ * @version 1.0 (Testing for small errors)
  */
 public class BeerBottle {
     public static void main (String [] args) {
@@ -15,14 +15,14 @@ public class BeerBottle {
     word = "bottle";
     
     }
-    System.out.println(beerNum + "" + word + "of beer on the wall");
-    System.out.println(beerNum + "" + word + "of beer");
+    System.out.println(beerNum + " " + word + " of beer on the wall");
+    System.out.println(beerNum + " " + word + " of beer");
     System.out.println("Take one down.");
     System.out.println("Pass it around.");
     beerNum = beerNum - 1;
     
     if (beerNum > 0) {
-        System.out.println(beerNum + "" + word + " of beer on the wall");
+        System.out.println(beerNum + " " + word + " of beer on the wall");
     } else {
         System.out.println("No more bottles of beer on the wall");
     }
