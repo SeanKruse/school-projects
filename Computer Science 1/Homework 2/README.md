@@ -12,4 +12,4 @@ Add the three provided numbers together and calculate the average
 
 Display the result back to the user
 
-![What is this](Average1.png)
+![What is this](Average1.PNG)
