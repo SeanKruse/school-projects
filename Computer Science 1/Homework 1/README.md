@@ -1,5 +1,5 @@
 # Beer Bottle 
 
-### Task 1
+### Objective
 
 Output strings to display the beer bottle on the wall song.
