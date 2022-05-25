@@ -7,6 +7,7 @@ Take input from user to provide 3 integers.
 ### Task 2
 
 Display the three integers multiplied together.
+
 Add the three provided integers together and calculate the average.
 
 ### Task 3
