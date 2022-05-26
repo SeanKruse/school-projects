@@ -1,7 +1,0 @@
-#BlueJ class context
-comment0.target=QuarterTest
-comment0.text=\n\ Tests\ for\ enumeration\ Quarter.\n\n\ @author\ \ Dr.\ Jody\ Paul\n\ @version\ 1.1.1\n
-comment1.params=
-comment1.target=void\ basicQuarterEnumTest()
-comment1.text=Verifies\ proper\ ordering\ of\ Quarter\ enum.
-numComments=2
