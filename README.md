@@ -1,5 +1,5 @@
 # school-projects
-A repository to organize and highlight all of my CS projects. 
+A repository to organize and highlight all of my school projects. 
 
 ## Index
 The courses are listed in chronological order, with newer projects closer to the top.
