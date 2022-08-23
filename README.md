@@ -5,6 +5,11 @@ A repository to organize and highlight all of my school projects.
 The courses are listed in chronological order, with newer projects closer to the top.
 You can find more information on each project's individual README.
 
+### Principles of Programming Languages
+Projects in Scala and Prolog
+
+[Jump to Code](<./Principles of Programming Languages>)
+
 ### Concurrent Programming
 Three projects focused on building up a simple web server utilizing concurrency. The final project introduced Scala and utilized a future to serve up an html file to localhost.
 
