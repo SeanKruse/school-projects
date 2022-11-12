@@ -3,7 +3,7 @@
  * Instructor: Thyago Mota
  * Description: Prg 02 - Sudoku Puzzle
  * Student: Sean Kruse and Devin Schulitz
- * References / Collaborators: Devin Schulitz help me with Scala questions or functional questions.
+ * References / Collaborators: Devin Schulitz did most of the heavy lifting setting up task #14 and #15.
  * Scala Cookbook
  * 
  */
@@ -54,7 +54,7 @@ object Sudoku {
 
   // TODO #5: return a specific box from a sudoku board as a sequence of numbers
   def getBox(board: Array[Array[Int]], x: Int, y: Int): Array[Int] = {
-    //this method was sourced
+    //this logic was sourced from rocking the JVM - Backtracking solution
     board(0+(y*3)).slice((x*3),((x*3)+3)).concat(board(1 + (y*3)).slice((x*3),((x*3)+3))).concat(board(2 + (y*3)).slice((x*3),((x*3)+3)))
   }
 
