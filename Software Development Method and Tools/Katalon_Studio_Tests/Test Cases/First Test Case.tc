@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Test taskpane.html</description>
+   <name>First Test Case</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>327a175b-da56-476b-9492-7a6aeedfa591</testCaseGuid>
+</TestCaseEntity>
