@@ -5,6 +5,11 @@ A repository to organize and highlight all of my school projects.
 The courses are listed in chronological order, with newer projects closer to the top.
 You can find more information on each project's individual README.
 
+### Algorithms and Algorithm Analysis
+The course focused on the application of computational complexity theory, to practice implementing different algorithms and understanding the upper and lower bounds in regards to complexity.
+
+[Jump to Code](<./Alorithms and Algorithm Analysis>)
+
 ### Principles of Programming Languages
 The course focused on the main programming paradigms, namely: imperative, object-oriented, functional, and logical. Specific issues related to programming language implementation, such as nesting block structures, static and dynamic scoping, interpreted and compiled languages, among others were discussed in this course.
 
